@@ -29,6 +29,3 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-
-# Service account key
-/terraform-sa-key.json
