@@ -1,5 +1,5 @@
-resource "google_project" "main" {
-  name       = "my-gcp-project"
-  project_id = "my-gcp-project-12345"
-  org_id     = "123456789"
+resource "google_project" "gke" {
+  name       = "GKE Experiment"
+  project_id = "gke-experiment"
+  org_id     = "0"
 }
