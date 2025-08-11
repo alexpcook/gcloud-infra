@@ -66,7 +66,7 @@ resource "google_container_node_pool" "default" {
     spot = true
 
     machine_type = "e2-small"
-    disk_size_gb = 10
+    disk_size_gb = 12
 
     service_account = google_service_account.gke.email
     oauth_scopes = [
