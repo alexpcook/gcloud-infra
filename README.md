@@ -1,4 +1,4 @@
-# GCloud Infrastructure
+# Google Cloud Infrastructure
 
 A two-tier Terraform configuration for deploying Google Kubernetes Engine (GKE) clusters and applications on Google Cloud Platform.
 
