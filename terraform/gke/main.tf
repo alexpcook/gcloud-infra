@@ -43,6 +43,12 @@ resource "google_service_account" "gke" {
   display_name = "GKE Service Account"
 }
 
+resource "google_project_iam_member" "gke_default_node_service_account" {
+  project = google_project.apc.project_id
+  role    = "roles/container.defaultNodeServiceAccount"
+  member  = "serviceAccount:${google_service_account.gke.email}"
+}
+
 resource "google_container_cluster" "primary" {
   project = google_project.apc.project_id
 
@@ -51,6 +57,12 @@ resource "google_container_cluster" "primary" {
 
   remove_default_node_pool = true
   initial_node_count       = 1
+
+  maintenance_policy {
+    daily_maintenance_window {
+      start_time = "09:00"
+    }
+  }
 
   deletion_protection = false
 }
